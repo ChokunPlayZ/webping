@@ -1,15 +1,22 @@
 {
-  "dependencies": {
-    "axios": "^1.2.3",
-    "console-stamp": "^3.1.0"
-  },
   "name": "njs_webping",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "bun run index.ts",
+    "dev": "bun --watch index.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "bun": ">=1.3.0"
   },
   "author": "Chokun Rojanapron",
   "license": "ISC",
-  "description": "a simple nodejs script designed to ping a url at a interval"
+  "description": "A simple Bun-native TypeScript service that pings a URL at an interval",
+  "devDependencies": {
+    "@types/bun": "^1.4.4",
+    "typescript": "^7.0.2"
+  }
 }

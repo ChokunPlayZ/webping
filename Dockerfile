@@ -1,11 +1,11 @@
-FROM node:16
+FROM oven/bun:1
 
-WORKDIR /
+WORKDIR /app
 
-COPY package*.json ./
+ENV NODE_ENV=production
 
-RUN npm install
+COPY --chown=bun:bun package.json tsconfig.json index.ts ./
 
-COPY . .
+USER bun
 
-CMD [ "node", "." ]
+CMD ["bun", "run", "index.ts"]
